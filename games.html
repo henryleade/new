@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPlay</title>
+    <link rel="icon" type="image/jpg" href="https://henryleade.github.io/image/Techplay%20logo.jpg-">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;700&family=Orbitron:wght@400;700&display=swap');
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #50e3c2;
+            --accent-color: #f5a623;
+            --bg-color: #1c1c1c;
+            --card-bg: #2a2a2a;
+            --text-color: #ffffff;
+            --card-width: 340px;
+            --card-height: 480px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .tagline {
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            color: var(--bg-color);
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        .game-showcase {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .game-card {
+            width: var(--card-width);
+            height: var(--card-height);
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .game-card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .card-front {
+            background-color: var(--card-bg);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-back {
+            background: linear-gradient(145deg, var(--primary-color), var(--secondary-color));
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .card-description {
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .game-details {
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .game-size {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: var(--text-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            background-color: var(--card-bg);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .game-showcase {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Premium Downloads</h1>
+            <p class="tagline">Techplay Brings You Curated Gaming Experience</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="game-showcase">
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/90.jpg" alt="Call of Duty (MW3)" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Call of Duty (MW3)</h3>
+                                <p class="card-description">Immerse yourself in a cyberpunk world where technology and humanity intertwine.</p>
+                                <p class="game-details">Size: <span class="game-size">45 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Call of Duty(MW3)</h3>
+                            <p class="card-description">Experience the neon-lit streets of New Aurora in this open-world RPG. Hack, fight, and negotiate your way through a city on the brink of technological revolution.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Shooting, Action<br>
+                                Size: <span class="game-size">26.1 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/games/download.php?id=350157" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/Injustice.jpg" alt="Injustice 2" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Injustice 2</h3>
+                                <p class="card-description">Embark on a mind-bending journey through parallel universes.</p>
+                                <p class="game-details">Size: <span class="game-size">32 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Injustice 2</h3>
+                            <p class="card-description">Solve intricate puzzles that challenge your perception of reality. Navigate through multiple dimensions to uncover the secrets of the multiverse.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">32 GB</span>
+                            </p>
+                            <a href="https://pastefg.hermietkreeft.site/?e4ad2bdeef60c91e#72DGQVfYzfSzo9CNCtJhAobttiyUxM7YupNf7jKoEieS" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/Naruto%20storm.jpg" alt="Naruto Ultimate Ninja Storm" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Naruto Ultimate Ninja Storm</h3>
+                                <p class="card-description">Embark on a mind-bending journey through parallel universes.</p>
+                                <p class="game-details">Size: <span class="game-size">32 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Naruto Ultimate Ninja Storm</h3>
+                            <p class="card-description">Solve intricate puzzles that challenge your perception of reality. Navigate through multiple dimensions to uncover the secrets of the multiverse.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">32 GB</span>
+                            </p>
+                            <a href="magnet:?xt=urn:btih:63B945449FEAA5C0EB211F2BDC3017B1EF4CCE92" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/2.jpg" alt="Naruto Ultimate Ninja Storm 2" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title"> Naruto Ultimate Ninja Stom 2</h3>
+                                <p class="card-description">Embark on a mind-bending journey through parallel universes.</p>
+                                <p class="game-details">Size: <span class="game-size">32 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Naruto Ultimate Ninja Storm 2</h3>
+                            <p class="card-description">Solve intricate puzzles that challenge your perception of reality. Navigate through multiple dimensions to uncover the secrets of the multiverse.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">5.53 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=9110" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/Games/3.jpg" alt="Naruto Ultimate Ninja Storm 3" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Naruto Ultimate Ninja Storm 3</h3>
+                                <p class="card-description">Embark on a mind-bending journey through parallel universes.</p>
+                                <p class="game-details">Size: <span class="game-size">32 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Naruto Ultimate Ninja Storm 3</h3>
+                            <p class="card-description">Solve intricate puzzles that challenge your perception of reality. Navigate through multiple dimensions to uncover the secrets of the multiverse.</p>
+                            <p class="game-details">
+                                Developer: Paradox Innovations<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">5.59 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4847" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/mada.jpg" alt="Naruto Ultimate Ninja Storm 4" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Naruto Ultimate Ninja Storm 4</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Naruto Ultimate Ninja Storm 4</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">29.0 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/Read.jpg" alt="Read Dead Redemption" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Read Dead Redemption (Part 2)</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Read Dead Redemption</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=480" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/Games/Call%204.jpeg" alt="Call of Duty" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Call of Duty (Modern Warfare 4)</h3> 
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Call of duty(Modern warfare 4)</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/GTA.jpg" alt="GTA IV" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">GTA IV</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">GTA IV</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            
+                            <a href="https://pastefg.hermietkreeft.site/?cf1e6f08495ff548#FD58QaLAjtVpmpHrUiCjLPxjQt9W7HdM1RDDGz1YvjAK"  class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/yes.jpg" alt="Naruto Ultimate Ninja Storm 4" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Call of duty (black opps 4)</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">150GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Call of duty (black opps 4)</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">150 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=13012" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/Connection.jpg" alt="Naruto Ultimate Ninja Storm Connection" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Naruto Ultimate Ninja Storm Connection</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Naruto Ultimate Ninja Storm Connection</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">19.2GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=14627" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/new/19.jpg" alt="Fifa 19" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Fifa 19</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">43.9GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Fifa 19"</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">43.9GB</span>
+                            </p>
+                            <a href="magnet:?xt=urn:btih:2428EA0A5543EA3C35408DD13643FBE92B1C532C" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/kk.jpg" alt="Mortal Kombat 11" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Mortal Kombat 11</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">111 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Mortal Kombat 11</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">111GB</span>
+                            </p>
+                            <a href="magnet:?xt=urn:btih:B87F4929F4A07A3BDB69A467C60F0CB792C5A1C8&dn=Mortal+Kombat+11%3A+Ultimate+Edition+%28v0.384-34-CL237394+%2B+All+DLCs%2C+MULTi12%29+%5BFitGirl+Repack%2C+Selective+Download+-+from+55.2+GB%5D&tr=udp%3A%2F%2F46.148.18.250%3A2710&tr=udp%3A%2F%2Fopentor.org%3A2710&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=http%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2770%2Fannounce&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=http%3A%2F%2Fretracker.local%2Fannounce&tr=http%3A%2F%2Fretracker.ip.ncnet.ru%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fipv4.tracker.harry.lu%3A80%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fcoppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.zer0day.to%3A1337%2Fannounce" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/Games/efootbal.jpg" alt="efootball 2021" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">efootball 2021</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">25.5GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">efootball 2021</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">25.5GB</span>
+                            </p>
+                            <a href="magnet:?xt=urn:btih:7AFFF2753BAEFE27FAB3C3BBFF78DB0EF9DB4845" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/Miles.jpg" alt="Miles Morals" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Miles Morals</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Miles Morals</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=11499" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/star%20wars.jpg" alt="Star Wars" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Star Wars (Battle Front)</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">25.3GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">StarWars (Battle Front) </h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">25.3GB</span>
+                            </p>
+                            <a href="magnet:?xt=urn:btih:B8CD83FF620867806A702CA4BA7E65762BD147ED&dn=STAR+WARS%3A+Battlefront+%28v1.0.7.64833+%2B+2+Bonus+OSTs%2C+MULTi11%29+%5BFitGirl+Repack%2C+Selective+Download+-+from+25.1+GB%5D&tr=udp%3A%2F%2Fopentor.net%3A6969&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.gbitt.info%3A80%2Fannounce&tr=http%3A%2F%2Ftracker.ccp.ovh%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.ccp.ovh%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.theoks.net%3A6969%2Fannounce&tr=https%3A%2F%2Ftracker.tamersunion.org%3A443%2Fannounce&tr=http%3A%2F%2Fopen.acgnxtracker.com%3A80%2Fannounce&tr=http%3A%2F%2Fopen.acgtracker.com%3A1096%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fcoppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.zer0day.to%3A1337%2Fannounce" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/Fifa%2023.jpg" alt="Fifa 23" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Fifa 23</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">54.0GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Fifa 23</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">54.9GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=13893" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/batman.jpg" alt="Batman(Akharm knights)" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Batman (Akharm knights)</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">37.1GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Batman (Akharm knights)</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">37.1GB</span>
+                            </p>
+                            <a href="magnet:?xt=urn:btih:230F32ADA9E2C6935687FE12CCB14F5662106E6B&dn=Batman%3A+Arkham+Knight+-+Premium+Edition+%28v1.999+GOG+%2B+All+DLCs%2C+MULTi10%29+%5BFitGirl+Repack%2C+Selective+Download+-+from+25.9+GB%5D&tr=udp%3A%2F%2Fopentor.net%3A6969&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.gbitt.info%3A80%2Fannounce&tr=http%3A%2F%2Ftracker.ccp.ovh%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.ccp.ovh%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.theoks.net%3A6969%2Fannounce&tr=https%3A%2F%2Ftracker.tamersunion.org%3A443%2Fannounce&tr=http%3A%2F%2Fopen.acgnxtracker.com%3A80%2Fannounce&tr=http%3A%2F%2Fopen.acgtracker.com%3A1096%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fcoppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.zer0day.to%3A1337%2Fannounce" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/header.jpg" alt="God of War" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">God of War (Ragnarok) </h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">81.9GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">God of War (Ragnarok)  </h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">81.9GB</span>
+                            </p>
+                            <a href="magnet:?xt=urn:btih:1D15BD27B1D5053471634205E768C1B9AD73D176&dn=God+of+War%3A+Ragnar%26ouml%3Bk+-+Digital+Deluxe+Edition+%28%2B+All+DLCs%2FBonuses+%2B+6+GB+VRAM+Bypass%2C+MULTi22%29+%5BFitGirl+Repack%2C+Selective+Download+-+from+65.1+GB%5D&tr=udp%3A%2F%2Fopentor.net%3A6969&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Ftracker.theoks.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.ccp.ovh%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=https%3A%2F%2Ftracker.tamersunion.org%3A443%2Fannounce&tr=udp%3A%2F%2Fexplodie.org%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.bt4g.com%3A2095%2Fannounce&tr=udp%3A%2F%2Fbt2.archive.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fbt1.archive.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.filemail.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker1.bt.moack.co.kr%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fcoppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.zer0day.to%3A1337%2Fannounce" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/sk.jpg" alt="Naruto Shinobi Striker" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Naruto Shinobi Striker</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">5.48GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Naruto Shinobi Striker</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">5.48GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=7325" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/Revolution.jpg" alt="Naruto Ultimate Ninja Revolution" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Naruto Ultimate Ninja Revolution</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">5.79GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Naruto Ultimate Ninja Revolution</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">5.79GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4652" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/Games/T.jpg" alt="Tomb Raider" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Tomb Raider (Part 1) </h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">11.3GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Tomb Raider</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action, Survive<br>
+                                Size: <span class="game-size">11.3GB</span>
+                            </p>
+                            <a href="magnet:?xt=urn:btih:3E078F421F8CC73D5ECCCD9F07394C61AA60D130&dn=Tomb+Raider%3A+Definitive+Edition+%28v1.01.0.0+%2B+All+DLCs%2C+MULTi12%29+%5BFitGirl+Repack%2C+Selective+Download+-+from+6+GB%5D&tr=udp%3A%2F%2Fopentor.net%3A6969&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Ftracker.theoks.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.ccp.ovh%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=http%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=https%3A%2F%2Ftracker.tamersunion.org%3A443%2Fannounce&tr=udp%3A%2F%2Fexplodie.org%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.bt4g.com%3A2095%2Fannounce&tr=udp%3A%2F%2Fbt2.archive.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fbt1.archive.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.filemail.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker1.bt.moack.co.kr%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fcoppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.zer0day.to%3A1337%2Fannounce" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/Games/Rise%202.jpg" alt="The Rise of Tomb Raider" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">The Rise of Tomb Raider</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">20.0GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">The Rise of Tomb Raider</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">20.0GB</span>
+                            </p>
+                            <a href="magnet:?xt=urn:btih:509815B27B5818D09C8EF82F0359E1374822347C&dn=Rise+of+the+Tomb+Raider%3A+20+Year+Celebration+%28v1.0.1026.0%2FDenuvoless+%2B+All+DLCs%2C+MULTi15%29+%5BFitGirl+Repack%2C+Selective+Download+-+from+12.9+GB%5D&tr=udp%3A%2F%2F46.148.18.250%3A2710&tr=udp%3A%2F%2Fopentor.org%3A2710&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=http%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2770%2Fannounce&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=http%3A%2F%2Fretracker.local%2Fannounce&tr=http%3A%2F%2Fretracker.ip.ncnet.ru%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fipv4.tracker.harry.lu%3A80%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.zer0day.to%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fcoppersurfer.tk%3A6969%2Fannounce" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/Last%20of%20us.jpg" alt="Last of us" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Last of us</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">52.0GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Last of us</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">52.0GB</span>
+                            </p>
+                            <a href="magnet:?xt=urn:btih:6A4747DD9819515BD3D480D03771D3FD017EDCE1&dn=The+Last+of+Us%3A+Part+I+-+Digital+Deluxe+Edition+%28v1.1.3+%2B+2+DLCs+%2B+Bonus+Content%2C+MULTi24%29+%5BFitGirl+Repack%2C+Selective+Download+-+from+38.8+GB%5D&tr=udp%3A%2F%2Fopentor.net%3A6969&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.gbitt.info%3A80%2Fannounce&tr=http%3A%2F%2Ftracker.ccp.ovh%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.ccp.ovh%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.theoks.net%3A6969%2Fannounce&tr=https%3A%2F%2Ftracker.tamersunion.org%3A443%2Fannounce&tr=http%3A%2F%2Fopen.acgnxtracker.com%3A80%2Fannounce&tr=http%3A%2F%2Fopen.acgtracker.com%3A1096%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fcoppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.zer0day.to%3A1337%2Fannounce" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/Games/Hero.jpg" alt="HEROES CITY SUPERMAN EDITION" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">HEROES CITY <h2>SUPERMAN EDITION</h2></h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">HEROES CITY <h2>SUPERMAN EDITION</h2></h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size"> GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=11367" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/Games/g.png" alt="Goku Sparking Zero" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Goku Sparking Zero</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Goku Sparking Zero</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/Games/Transformers.jpg" alt="Transformers (rise of the fallen)" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Transformers (Rise of the fallen)</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Transformers (Rise of the fallen)</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/new/dogs.jpg" alt="Watch Dogs legion" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Watch Dogs legion</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Watch Dogs legion</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/Games/watch.jpg" alt="Watch Dogs 2" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Watch Dogs 2</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Watch Dogs 2</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/new/Elden.jpg" alt="Elden Ring" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Elden Ring</h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Elden Ring</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="magnet:?xt=urn:btih:4CC8E331E699748269F6AC1B98B802684F5AC97A&dn=ELDEN+RING%3A+Shadow+of+the+Erdtree+Deluxe+Edition+%28v1.12%2Fv1.12.1+%2B+9+DLCs%2FBonuses+%2B+Windows+7+Fix%2C+MULTi14%29+%5BFitGirl+Repack%2C+Selective+Download+-+from+47.4+GB%5D&tr=udp%3A%2F%2Fopentor.net%3A6969&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.gbitt.info%3A80%2Fannounce&tr=http%3A%2F%2Ftracker.ccp.ovh%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.ccp.ovh%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.theoks.net%3A6969%2Fannounce&tr=https%3A%2F%2Ftracker.tamersunion.org%3A443%2Fannounce&tr=http%3A%2F%2Fopen.acgnxtracker.com%3A80%2Fannounce&tr=http%3A%2F%2Fopen.acgtracker.com%3A1096%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fcoppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.zer0day.to%3A1337%2Fannounce" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/new/Teen.jpg" alt="The Rise of Tomb Raider" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Teenage Mutant Ninja turtle (Mutant in Manhatta)  </h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">The Rise of Tomb Raider</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/new/1.jpg" alt="Red Dead Redemption" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Red Dead Redemption (Part 1)  </h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Red Dead Redemption (Part 1)</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=9023" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/h.jpg" alt="Red Dead Redemption" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Red Dead Redemption (Part 1)  </h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Red Dead Redemption (Part 1)</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/h.jpg" alt="Red Dead Redemption" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Red Dead Redemption (Part 1)  </h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Red Dead Redemption (Part 1)</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/h.jpg" alt="Red Dead Redemption" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Red Dead Redemption (Part 1)  </h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Red Dead Redemption (Part 1)</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/h.jpg" alt="Red Dead Redemption" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Red Dead Redemption (Part 1)  </h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Red Dead Redemption (Part 1)</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/h.jpg" alt="Red Dead Redemption" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Red Dead Redemption (Part 1)  </h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Red Dead Redemption (Part 1)</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/h.jpg" alt="Red Dead Redemption" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Red Dead Redemption (Part 1)  </h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Red Dead Redemption (Part 1)</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/h.jpg" alt="Red Dead Redemption" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Red Dead Redemption (Part 1)  </h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Red Dead Redemption (Part 1)</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/h.jpg" alt="Red Dead Redemption" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Red Dead Redemption (Part 1)  </h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Red Dead Redemption (Part 1)</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/h.jpg" alt="Red Dead Redemption" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Red Dead Redemption (Part 1)  </h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Red Dead Redemption (Part 1)</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/h.jpg" alt="Red Dead Redemption" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Red Dead Redemption (Part 1)  </h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Red Dead Redemption (Part 1)</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/h.jpg" alt="Red Dead Redemption" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Red Dead Redemption (Part 1)  </h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Red Dead Redemption (Part 1)</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/h.jpg" alt="Red Dead Redemption" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Red Dead Redemption (Part 1)  </h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Red Dead Redemption (Part 1)</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://henryleade.github.io/image/h.jpg" alt="Red Dead Redemption" class="game-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Red Dead Redemption (Part 1)  </h3>
+                                <p class="card-description">Build and nurture your own ecosystem in this innovative simulation game.</p>
+                                <p class="game-details">Size: <span class="game-size">28 GB</span></p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="card-title">Red Dead Redemption (Part 1)</h3>
+                            <p class="card-description">Shape the destiny of an entire planet. Balance resources, manage wildlife, and guide your civilization through ages of technological and environmental challenges.</p>
+                            <p class="game-details">
+                                Developer: TechPlay Studios<br>
+                                Genre: Action<br>
+                                Size: <span class="game-size">28 GB</span>
+                            </p>
+                            <a href="https://skidrowrepack.com/index.php?do=download&id=4838" class="download-btn">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 TechPlay Premium Downloads - TechPlay Gaming Platform. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
